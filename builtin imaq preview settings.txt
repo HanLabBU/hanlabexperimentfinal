@@ -1,0 +1,254 @@
+% PREVIEW FIGURE
+
+get(obj.previewFigure)
+Alphamap: [1x64 double]
+BeingDeleted: 'off'
+BusyAction: 'queue'
+ButtonDownFcn: ''
+Children: [2x1 Panel]
+Clipping: 'on'
+CloseRequestFcn: 'closereq'
+Color: [0.94 0.94 0.94]
+Colormap: [256x3 double]
+CreateFcn: ''
+CurrentAxes: [1x1 Axes]
+CurrentCharacter: ''
+CurrentObject: []
+CurrentPoint: [-0.00097656 -0.00096061]
+DeleteFcn: ''
+DockControls: 'on'
+FileName: ''
+GraphicsSmoothing: 'on'
+HandleVisibility: 'off'
+IntegerHandle: 'on'
+Interruptible: 'on'
+InvertHardcopy: 'on'
+KeyPressFcn: ''
+KeyReleaseFcn: ''
+MenuBar: 'none'
+Name: 'Video Preview - hamamatsu:1'
+NextPlot: 'add'
+Number: 1
+NumberTitle: 'off'
+PaperOrientation: 'portrait'
+PaperPosition: [0.25 2.5 8 6]
+PaperPositionMode: 'manual'
+PaperSize: [8.5 11]
+PaperType: 'usletter'
+PaperUnits: 'inches'
+Parent: [1x1 Root]
+Pointer: 'arrow'
+PointerShapeCData: [16x16 double]
+PointerShapeHotSpot: [1 1]
+Position: [0.39023 0.28547 0.4 0.65016]
+Renderer: 'opengl'
+RendererMode: 'auto'
+Resize: 'on'
+SelectionType: 'normal'
+SizeChangedFcn: {3x1 cell}
+Tag: 'imaq.hamamatsu1_1'
+ToolBar: 'none'
+Type: 'figure'
+UIContextMenu: []
+Units: 'normalized'
+UserData: []
+Visible: 'on'
+WindowButtonDownFcn: ''
+WindowButtonMotionFcn: ''
+WindowButtonUpFcn: ''
+WindowKeyPressFcn: ''
+WindowKeyReleaseFcn: ''
+WindowScrollWheelFcn: ''
+WindowStyle: 'normal'
+
+% PREVIEW PANEL
+% BackgroundColor: [0.94 0.94 0.94]
+% BeingDeleted: 'off'
+% BorderType: 'none'
+% BorderWidth: 1
+% BusyAction: 'queue'
+% ButtonDownFcn: ''
+% Children: [4x1 Graphics]
+% Clipping: 'on'
+% CreateFcn: ''
+% DeleteFcn: ''
+% FontAngle: 'normal'
+% FontName: 'MS Sans Serif'
+% FontSize: 8
+% FontUnits: 'points'
+% FontWeight: 'normal'
+% ForegroundColor: [0 0 0]
+% HandleVisibility: 'on'
+% HighlightColor: [1 1 1]
+% Interruptible: 'on'
+% Parent: [1x1 Panel]
+% Position: [0 0 1 1]
+% ShadowColor: [0.7 0.7 0.7]
+% SizeChangedFcn: @imscrollpanel/resizeView
+% Tag: 'imscrollpanel'
+% Title: ''
+% TitlePosition: 'lefttop'
+% Type: 'uipanel'
+% UIContextMenu: []
+% Units: 'normalized'
+% UserData: []
+% Visible: 'on'
+%
+% PREVIEW AXES
+% get(obj.previewAxes)
+% ALim: [0 1]
+% ALimMode: 'manual'
+% ActivePositionProperty: 'position'
+% AmbientLightColor: [1 1 1]
+% BeingDeleted: 'off'
+% Box: 'on'
+% BoxStyle: 'back'
+% BusyAction: 'queue'
+% ButtonDownFcn: ''
+% CLim: [0 255]
+% CLimMode: 'manual'
+% CameraPosition: [512.5 512.5 17.321]
+% CameraPositionMode: 'auto'
+% CameraTarget: [512.5 512.5 0]
+% CameraTargetMode: 'auto'
+% CameraUpVector: [0 -1 0]
+% CameraUpVectorMode: 'auto'
+% CameraViewAngle: 6.6086
+% CameraViewAngleMode: 'auto'
+% Children: [1x1 Image]
+% Clipping: 'on'
+% ClippingStyle: '3dbox'
+% Color: [1 1 1]
+% ColorOrder: [7x3 double]
+% ColorOrderIndex: 1
+% CreateFcn: ''
+% CurrentPoint: [2x3 double]
+% DataAspectRatio: [512 512 1]
+% DataAspectRatioMode: 'auto'
+% DeleteFcn: ''
+% FontAngle: 'normal'
+% FontName: 'Helvetica'
+% FontSize: 10
+% FontSmoothing: 'on'
+% FontUnits: 'points'
+% FontWeight: 'normal'
+% GridAlpha: 0.15
+% GridAlphaMode: 'auto'
+% GridColor: [0.15 0.15 0.15]
+% GridColorMode: 'auto'
+% GridLineStyle: '-'
+% HandleVisibility: 'on'
+% HitTest: 'on'
+% Interruptible: 'on'
+% LabelFontSizeMultiplier: 1.1
+% Layer: 'top'
+% LineStyleOrder: '-'
+% LineStyleOrderIndex: 1
+% LineWidth: 0.5
+% MinorGridAlpha: 0.25
+% MinorGridAlphaMode: 'auto'
+% MinorGridColor: [0.1 0.1 0.1]
+% MinorGridLineStyle: ':'
+% NextPlot: 'replace'
+% OuterPosition: [-71.8 -42.94 1150 1098.7]
+% Parent: [1x1 Panel]
+% PickableParts: 'visible'
+% PlotBoxAspectRatio: [1 1 1]
+% PlotBoxAspectRatioMode: 'auto'
+% Position: [1 1.5 1024 1024]
+% Projection: 'orthographic'
+% Selected: 'off'
+% SelectionHighlight: 'on'
+% SortMethod: 'childorder'
+% Tag: 'hImscrollpanelAxes'
+% TickDir: 'out'
+% TickDirMode: 'manual'
+% TickLabelInterpreter: 'tex'
+% TickLength: [0.01 0.025]
+% TightInset: [44.493 30.925 14.46 7.6758]
+% Title: [1x1 Text]
+% TitleFontSizeMultiplier: 1.1
+% TitleFontWeight: 'bold'
+% Type: 'axes'
+% UIContextMenu: []
+% Units: 'pixels'
+% UserData: []
+% View: [0 90]
+% Visible: 'off'
+% XAxisLocation: 'bottom'
+% XColor: [0.15 0.15 0.15]
+% XColorMode: 'auto'
+% XDir: 'normal'
+% XGrid: 'off'
+% XLabel: [1x1 Text]
+% XLim: [0.5 1024.5]
+% XLimMode: 'manual'
+% XMinorGrid: 'off'
+% XMinorTick: 'off'
+% XScale: 'linear'
+% XTick: [100 200 300 400 500 600 700 800 900 1000]
+% XTickLabel: {10x1 cell}
+% XTickLabelMode: 'auto'
+% XTickLabelRotation: 0
+% XTickMode: 'manual'
+% YAxisLocation: 'left'
+% YColor: [0.15 0.15 0.15]
+% YColorMode: 'auto'
+% YDir: 'reverse'
+% YGrid: 'off'
+% YLabel: [1x1 Text]
+% YLim: [0.5 1024.5]
+% YLimMode: 'manual'
+% YMinorGrid: 'off'
+% YMinorTick: 'off'
+% YScale: 'linear'
+% YTick: [100 200 300 400 500 600 700 800 900 1000]
+% YTickLabel: {10x1 cell}
+% YTickLabelMode: 'auto'
+% YTickLabelRotation: 0
+% YTickMode: 'manual'
+% ZColor: [0.15 0.15 0.15]
+% ZColorMode: 'auto'
+% ZDir: 'normal'
+% ZGrid: 'off'
+% ZLabel: [1x1 Text]
+% ZLim: [-1 1]
+% ZLimMode: 'manual'
+% ZMinorGrid: 'off'
+% ZMinorTick: 'off'
+% ZScale: 'linear'
+% ZTick: []
+% ZTickLabel: ''
+% ZTickLabelMode: 'auto'
+% ZTickLabelRotation: 0
+% ZTickMode: 'manual'
+
+% PREVIEW IMAGE
+% get(obj.previewImageObj)
+% AlphaData: 1
+% AlphaDataMapping: 'none'
+% Annotation: [1x1 matlab.graphics.eventdata.Annotation]
+% BeingDeleted: 'off'
+% BusyAction: 'queue'
+% ButtonDownFcn: ''
+% CData: [1024x1024 uint8]
+% CDataMapping: 'direct'
+% Children: []
+% Clipping: 'on'
+% CreateFcn: ''
+% DeleteFcn: {2x1 cell}
+% DisplayName: ''
+% HandleVisibility: 'on'
+% HitTest: 'on'
+% Interruptible: 'on'
+% Parent: [1x1 Axes]
+% PickableParts: 'visible'
+% Selected: 'off'
+% SelectionHighlight: 'on'
+% Tag: ''
+% Type: 'image'
+% UIContextMenu: []
+% UserData: []
+% Visible: 'on'
+% XData: [1 1024]
+% YData: [1 1024]

@@ -1,0 +1,18 @@
+x = experimentObject;
+s = size(x.rawTrace,1);
+l = floor(s/4);
+n = reshape([true(1,l); true(1,l); false(1,l); false(1,l)],l*4,1);
+redtrace = x.rawTrace(n);
+greentrace = x.rawTrace(~n);
+
+%or
+s = floor(length(x.rawTrace)/4)*4;
+redtrace = x.rawTrace(1:4:s) + x.rawTrace(2:4:s);
+greentrace = x.rawTrace(3:4:s) + x.rawTrace(4:4:s);
+
+t = 1/7.5:1/7.5:s/30;
+plot(t,redtrace,'r','linewidth',2)
+hold on
+plot(t,greentrace,'g','linewidth',2)
+xlabel('time')
+

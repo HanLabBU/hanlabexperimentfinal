@@ -1,0 +1,241 @@
+ 
+Running Functions and Programs, and Entering Variables
+On this page…
+
+Running Statements at the Command Line Prompt
+
+Stopping Execution
+
+Running External Programs
+
+Evaluating or Opening a Selection
+
+Displaying Hyperlinks in the Command Window
+Running Statements at the Command Line Prompt
+Entering Variables and Running Functions
+
+At the prompt, enter data and run functions. For example, to create A, a 3-by-3 matrix, type
+
+A = [1 2 3; 4 5 6; 7 8 10]
+
+When you press the Enter or Return key after typing the line, the MATLAB software responds with
+
+A =
+	
+     1     2     3
+     4     5     6
+     7     8    10
+
+To run a function, it must be in the current folder or in a folder on the search path. By default, functions included with MATLAB are on the search path. Therefore, you do not need to do anything special to run functions provided with The MathWorks products.
+
+Type the function including all arguments and press Enter or Return. MATLAB displays the result. For example, type
+
+magic(2)
+
+and MATLAB returns
+
+ans =
+	1     3
+	4     2
+
+To determine the name of the M-file currently running, use mfilename.
+
+To find the name of a function you want to run that was provided by The MathWorks, use the function browser—see Finding Functions Using the Function Browser.
+
+What Is a Statement?.   All the information you type before pressing Enter or Return is known as a statement. Statements can include:
+
+    *
+
+      Variable assignments: For example, a = 3
+    *
+
+      Functions and their arguments: M-files that can accept input arguments and return output arguments, for example, magic.
+    *
+
+      Commands: M-files provided with MATLAB or toolboxes that do not accept input arguments, for example, clc, which clears the Command Window.
+    *
+
+      Scripts: M-files (MATLAB program files) you write that do not take input arguments or return output arguments, for example, myfile.m.
+
+Some functions support a form that does not require an input argument, thereby operating as commands. For convenience, the term function is used to refer to both functions and commands.
+
+When you enter program control statements, such as if ... end, the prompt does not appear until you complete the set of functions. In the following example, you press Enter at the end of each line, but the prompt does not appear until you complete the set of statements with end.
+
+Image of MATLAB Command Window showing if through end statements on multiple lines.
+Running M-Files That Were Not Provided By The MathWorks
+
+You can run M-files, files that contain code in the MATLAB language, that you created or that were created by other users of MATLAB. The M-file must be in the current folder or on the search path before you run it or you get an Undefined function or variable error or a File not found error. For more information, see Determining If MATLAB Can Access a File. When the M-file is in the current folder or on the search path, you run it the same way that you would run functions supplied with MATLAB. Type the name of the M-file in the Command Window, complete the statement by adding arguments, and press Enter or Return.
+
+For an M-file script, you can also use the run function and specify the full pathname to an M-file script.
+Examining Errors
+
+If an error message appears when you run an M-file, click the underlined portion of the error message, or position the cursor within the file name and press Ctrl+Enter. The offending M-file opens in the Editor, scrolled to the line containing the error.
+Processing Order
+
+In MATLAB, you can only run one process at a time. If MATLAB is busy running one function, any further statements you issue are buffered in a queue. The next statement runs when the previous statement finishes.
+
+Back to Top of Page Back to Top
+Stopping Execution
+
+You can stop execution of whatever is currently running by pressing Ctrl+C or Ctrl+Break at any time. On Apple Macintosh platforms, you can also use Command+. (the Command key and the period key) to stop the program. For certain operations, stopping the program might generate errors in the Command Window.
+
+For M-files that run a long time, or that call built-ins or MEX-files that run a long time, Ctrl+C does not always effectively stop execution. Typically, this happens on Microsoft Windows platforms rather than UNIX[1] platforms. If you experience this problem, you can help MATLAB break execution by including a drawnow, pause, or getframe function in your M-file, for example, within a large loop. Note that Ctrl+C might be less responsive if you start MATLAB with the -nodesktop option.
+
+Back to Top of Page Back to Top
+Running External Programs
+
+The exclamation point character, !, sometimes called bang, is a shell escape and indicates that the rest of the input line is a command to the operating system. Use it to invoke utilities or call other executable programs without quitting MATLAB. On UNIX platforms, for example,
+
+!vi yearlystats.m
+
+invokes the vi editor for a file named yearlystats.m. After the external program completes or you quit the program, the operating system returns control to MATLAB. Add & to the end of the line, such as
+
+!dir &
+
+on Windows platforms to display the output in a separate window or to run the application in background mode. For example
+
+!excel.exe &
+
+opens Microsoft Excel software and returns control to the Command Window so you can continue running MATLAB language statements.
+
+The maximum length of the argument list provided as input to the bang (!) command is determined by any restrictions maintained within the operating system. If you are running the Microsoft Windows XP operating system, for example, the length of the argument list input to the bang command cannot exceed 8189 characters.
+
+See the reference pages for the unix, dos, and system functions for details about running external programs that return results and status.
+
+      Note   To execute operating system commands with specific environment variables, include all commands to the operating system within the system call. Separate the commands using & (ampersand) for DOS, and ; (semicolon) for UNIX platforms. This applies to the MATLAB ! (bang), dos, unix, and system functions. Another approach is to set environment variables before starting MATLAB.
+
+On Macintosh platforms, you cannot run AppleScript® (from Apple) directly from MATLAB. However, you can run the Apple Mac OS X osascript function from the MATLAB unix or ! (bang) function to run AppleScript from MATLAB.
+UNIX Platforms System Path for Running UNIX Programs from the MATLAB Software
+
+To run a UNIX program from MATLAB if its folder is not on the UNIX system path MATLAB uses, take one of the actions described here.
+
+Change the Current Folder in MATLAB.   Change the current folder in MATLAB to the folder that contains the program you want to run.
+
+Modify the UNIX System Path that MATLAB Uses.   Add the folders to the system path from the shell. The exact steps depend on your shell. This is an example using sh:
+
+   1.
+
+      At the system command prompt, type
+
+      export PATH="$PATH:<myfolder>"
+
+      where <myfolder> is the folder that contains the program you want to run.
+   2.
+
+      Start MATLAB.
+   3.
+
+      In the MATLAB Command Window, type
+
+      !echo $PATH
+
+The folder containing the file is added to the system path that MATLAB uses. This change applies only to the current session of the terminal window.
+
+Automatically Modify the System Path When MATLAB Starts.   If you want to add a folder to the PATH environment variable each time you start MATLAB, perform these steps:
+
+   1.
+
+      In a text editor, open the file MATLAB/bin/matlab. This file is used to start MATLAB.
+   2.
+
+      Add this line to the beginning of the matlab file
+
+      export PATH="$PATH:<myfolder>"
+
+      where <myfolder> is the folder you want to add to the path.
+
+      If you run a tsch shell instead of a bash shell, use setenv instead of export.
+   3.
+
+      Save the file.
+
+The matlab file will modify the PATH environment variable, and then start MATLAB.
+
+Back to Top of Page Back to Top
+Evaluating or Opening a Selection
+
+Make a selection in the Command Window and press Enter or Return. The selection is appended to whatever is at the prompt, and MATLAB executes it.
+
+Similarly, you can select a statement from any MATLAB desktop tool, right-click, and select Evaluate Selection from the context menu. Alternatively, after making a selection, use the shortcut key, F9, or for some tools, press Enter or Return. For example, you can scroll up in the Command Window, select a statement you entered previously, and then press Enter to run it. If you try to evaluate a selection while MATLAB is busy, for example, running an M-file, execution waits until the current operation is done.
+
+You can open a function, file, variable, or Simulink model from the Command Window. Select the name in the Command Window, and then right-click and select Open Selection from the context window. This runs the open function for the item you selected so that it opens in the appropriate tool:
+
+    *
+
+      M-files and other text files open in the Editor.
+    *
+
+      Figure files (.fig) open in a figure window.
+    *
+
+      Variables open in the Variable Editor.
+    *
+
+      Models open in Simulink software.
+
+See the open reference page for details about what action occurs if there are name conflicts. If no action exists to work with the selected item, Open selection calls edit.
+Function Alternative
+
+Use open or edit to open a file in the Editor. Use type to display the M-file in the Command Window.
+
+Back to Top of Page Back to Top
+Displaying Hyperlinks in the Command Window
+
+You can use MATLAB functions to create hyperlinks in the Command Window. The created hyperlink can:
+
+    *
+
+      Open an HTML page in a MATLAB Web browser using an href string.
+    *
+
+      Transfer files via the file transfer protocol (FTP).
+    *
+
+      Run a MATLAB M-file using the matlabcolon (matlab:) command.
+
+Hyperlinks to Web Pages
+
+When creating a hyperlink to a Web page, append a full hypertext string on a single line as input to the disp or fprintf command. For example, the command
+
+disp('<a href = "http://www.mathworks.com">The MathWorks Web Site</a>')
+
+displays the hyperlink
+
+The MathWorks Web Site
+
+in the Command Window.
+
+When you click this link, a MATLAB Web browser opens and displays the requested page.
+Transferring Files via FTP
+
+To create a link to an FTP site, enter the site address as input to the disp command as shown below.
+
+disp('<a href = "ftp://ftp.mathworks.com">The MathWorks FTP Site</a>')
+
+This command displays
+
+The MathWorks FTP Site
+
+as a link in the Command Window.
+
+When you click this link, a MATLAB browser opens and displays the requested FTP site.
+Clicking a Hyperlink to Run MATLAB Functions
+
+Use matlab: to run a specified statement when you click a hyperlink in the Command Window. For example
+
+disp('<a href="matlab:magic(4)">Generate magic square</a>')
+
+displays
+
+Image of hyperlink in Command Window. The hyperlink text is Generate magic square. Visual cues it is a hyperlink are the text is a blue color and is underlined.
+
+When you click the link Generate magic square, MATLAB runs magic(4). Alternatively, you can press Ctrl+Enter if the cursor is positioned in the link text. You can use the disp, error, fprintf, or warning function with this feature. Change the hyperlink color using Colors Preferences — see Setting Colors Preferences for Desktop Tools. For more information, including examples, see the matlabcolon (matlab:) reference page.
+
+[1] UNIX is a registered trademark of The Open Group in the United States and other countries.
+
+Back to Top of Page Back to Top
+ 	Provide feedback about this page 
+
+Using The Command Window 	Using The Command Window	 	Entering Statements in the Command Window	Entering Statements in the Command Window
+
+© 1984-2009 The MathWorks, Inc. • Terms of Use • Patents • Trademarks • Acknowledgments

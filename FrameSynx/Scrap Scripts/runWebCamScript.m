@@ -1,0 +1,5 @@
+obj = WebCameraDataGenerator;
+activate(obj);
+
+
+
